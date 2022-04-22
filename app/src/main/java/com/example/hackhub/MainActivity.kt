@@ -9,6 +9,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         println("HEllO!")
         println("HEllO!!!!!!!!!!!!!!!sdsadad!")
+        println("HEllO!")
+        println("HEllO!!!!!!!!!!!!!!!sdsadaaaaaaaaaaaad!")
         //gay
     }
 }
