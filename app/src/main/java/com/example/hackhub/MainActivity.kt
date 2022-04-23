@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
 
+
         navView.setNavigationItemSelectedListener {
 
             when (it.itemId) {
