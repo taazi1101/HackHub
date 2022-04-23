@@ -3,10 +3,12 @@ package com.example.hackhub
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -16,11 +18,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val drawerToggle : Button = findViewById(R.id.drawerToggle)
         val drawerLayout: DrawerLayout = findViewById(R.id.drawerLayout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
 
         navView.setNavigationItemSelectedListener {
 
@@ -61,6 +65,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, IpSweepper::class.java)
             startActivity(intent)
         }
+
+        drawerToggle.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
