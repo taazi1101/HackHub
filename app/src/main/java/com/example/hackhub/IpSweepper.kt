@@ -5,22 +5,24 @@ import android.net.wifi.WifiManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.Formatter
-import android.util.TypedValue
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import java.lang.Exception
-import java.lang.reflect.Executable
 import java.net.InetAddress
 import java.util.*
 import kotlin.concurrent.thread
-import kotlin.coroutines.CoroutineContext
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
+
 
 class IpSweepper : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ip_sweepper)
+        val policy = ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
         val scanButton: Button = findViewById(R.id.scanStart)
         val perIp:TextView = findViewById(R.id.pIp)
         val log:TextView = findViewById(R.id.log)
@@ -46,12 +48,12 @@ class IpSweepper : AppCompatActivity() {
             var ip:String
             for (i in 0..256)
             {
-                if (i == own){
+                if (i == 0){
                     continue
                 }
                 ip = format.replace("FUZZ",i.toString())
                 log.setText(ip)
-                thread (start = true) { pinger(ip,10000,recv) }
+                pinger(ip,1,recv)
 
             }
             log.setText("Done.")
@@ -64,11 +66,13 @@ class IpSweepper : AppCompatActivity() {
             val addr = InetAddress.getByName(ip)
             val rechbl = addr.isReachable(timeout)
             if (rechbl) {
-                var text = TextView(this)
-                text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24F);
-                text.setText(ip)
-                rec.addView(text)
-            }
+                val info = addr.hostName
+                val tv = TextView(this)
+                tv.setText("$ip ($info)")
+                rec.addView(tv)
+                println("Found:$ip")
+           }
+            println(ip)
         }catch (ex:Exception){
             println("ERROR")
         }
