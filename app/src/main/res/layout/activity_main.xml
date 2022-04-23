@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <Button
             android:id="@+id/drawerToggle"
             android:layout_width="46dp"
@@ -19,21 +20,7 @@
             app:icon="@drawable/ic_baseline_dehaze_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/HackHubT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="96dp"
-            android:gravity="center"
-            android:text="HackHub"
-            android:textColor="@color/Red"
-            android:textSize="65sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
@@ -50,14 +37,5 @@
         app:menu="@menu/nav_menu"
         android:fitsSystemWindows="true"
         />
-    <Button
-        android:id="@+id/sweepButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="340dp"
-        android:text="Ip Sweepper"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
