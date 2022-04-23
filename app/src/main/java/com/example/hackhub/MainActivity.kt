@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val SweepIntent=Intent(this,IpSweepper::class.java)
         val stButton : Button = findViewById(R.id.drawerToggle)
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.nav_home -> Toast.makeText(applicationContext, "Clicked Home", Toast.LENGTH_SHORT).show()
                 R.id.nav_File_Bruteforce -> Toast.makeText(applicationContext, "Clicked File Bruteforce", Toast.LENGTH_SHORT).show()
-                R.id.nav_IP_Sweeper -> replaceFragment((),it.title.toString())
+                R.id.nav_IP_Sweeper -> startActivity(SweepIntent)
                 R.id.nav_new2 -> Toast.makeText(applicationContext, "Clicked new2", Toast.LENGTH_SHORT).show()
                 R.id.nav_new3 -> Toast.makeText(applicationContext, "Clicked new3", Toast.LENGTH_SHORT).show()
 
@@ -40,12 +41,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        val sweepButton: Button = findViewById(R.id.sweepButton)
 
-        sweepButton.setOnClickListener {
-            val intent = Intent(this, IpSweepper::class.java)
-            startActivity(intent)
-        }
 
         stButton.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
