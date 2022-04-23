@@ -34,7 +34,6 @@ class IpSweepper : AppCompatActivity() {
         println(ipParts.toString())
         var format = ""
         for (part in ipParts.indices){
-
             println(part.toString())
             format += ipParts[part]
             if (part < ipParts.size){

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+
+
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_File_Bruteforce"
+        android:title="File Bruteforce"
+        android:icon="@drawable/ic_baseline_folder_shared_24" />
+    <item
+        android:id="@+id/nav_IP_Sweeper"
+        android:title="IP Sweeper"
+        android:icon="@drawable/ic_baseline_network_check_24"
+        />
+
+    <item
+        android:id="@+id/nav_new2"
+        android:title="New"
+        />
+    <item
+        android:id="@+id/nav_new3"
+        android:title="New"/>
+
+
+
+
+
+</menu>

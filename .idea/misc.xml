@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/coding/HackHub/app/src/main/res/drawable/ic_baseline_dehaze_24.xml" value="0.1" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/drawable/ic_baseline_folder_shared_24.xml" value="0.318" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.318" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/drawable/ic_baseline_insert_drive_file_24.xml" value="0.318" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/drawable/ic_baseline_network_check_24.xml" value="0.318" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/layout/activity_ip_sweepper.xml" value="0.2793819655521783" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/layout/activity_main.xml" value="0.5122282608695652" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/layout/nav_header.xml" value="0.40851449275362317" />
+        <entry key="..\:/coding/HackHub/app/src/main/res/menu/nav_menu.xml" value="0.5744791666666667" />
         <entry key="..\:/Users/taazi/AndroidStudioProjects/HackHub/app/src/main/res/layout/activity_ip_sweepper.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/taazi/AndroidStudioProjects/HackHub/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
       </map>
