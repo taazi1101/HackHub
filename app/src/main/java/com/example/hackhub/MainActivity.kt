@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val stButton : Button = findViewById(R.id.drawerToggle)
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
@@ -44,6 +46,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, IpSweepper::class.java)
             startActivity(intent)
         }
+
+        stButton.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
     }
     private fun replaceFragment(fragment: Fragment,title : String){
         val fragmentManager = supportFragmentManager
