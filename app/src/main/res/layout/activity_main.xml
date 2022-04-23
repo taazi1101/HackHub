@@ -16,11 +16,28 @@
             android:layout_width="46dp"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="5dp"
             app:icon="@drawable/ic_baseline_dehaze_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/HackHubT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:layout_marginBottom="548dp"
+            android:gravity="center"
+            android:text="HackHub"
+            android:textColor="@color/Red"
+            android:textSize="65sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
