@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.Formatter
 import android.util.TypedValue
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class IpSweepper : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ip_sweepper)
+        val scanButton: Button = findViewById(R.id.scanStart)
         val perIp:TextView = findViewById(R.id.pIp)
         val log:TextView = findViewById(R.id.log)
         val recv:LinearLayout = findViewById(R.id.recv)
@@ -40,19 +42,21 @@ class IpSweepper : AppCompatActivity() {
             }
         }
         format += "FUZZ"
-        println(format.toString())
-        var ip:String
-        for (i in 0..256)
-        {
-            if (i == own){
-                continue
+        scanButton.setOnClickListener {
+            log.setText("Start")
+            var ip:String
+            for (i in 0..256)
+            {
+                if (i == own){
+                    continue
+                }
+                ip = format.replace("FUZZ",i.toString())
+                log.setText(ip)
+                thread (start = true) { pinger(ip,10000,recv) }
+
             }
-            ip = format.replace("FUZZ",i.toString())
-            log.setText(ip)
-            thread (start = true) { pinger(ip,10000,recv) }
-
+            log.setText("Done.")
         }
-
     }
 
     fun pinger(ip:String,timeout:Int,rec:LinearLayout)
