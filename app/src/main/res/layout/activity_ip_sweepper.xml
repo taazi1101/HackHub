@@ -33,6 +33,9 @@
     <ScrollView
         android:layout_width="410dp"
         android:layout_height="442dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="410dp"
+        android:layout_height="346dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,4 +59,14 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pIp" />
+
+    <Button
+        android:id="@+id/scanStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="4dp"
+        android:text="scan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
