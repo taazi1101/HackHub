@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Red</item>
         <item name="colorPrimaryDark">@color/Background</item>
-        <item name="colorPrimaryVariant">@color/Background</item>
+        <item name="colorPrimaryVariant">@color/BackgroundL</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
