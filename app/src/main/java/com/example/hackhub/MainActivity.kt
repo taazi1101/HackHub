@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val SweepIntent=Intent(this,IpSweepper::class.java)
+        val fileIntent=Intent(this,FileBruteforcer::class.java)
         val stButton : Button = findViewById(R.id.drawerToggle)
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
             when (it.itemId) {
                 R.id.nav_home -> Toast.makeText(applicationContext, "Clicked Home", Toast.LENGTH_SHORT).show()
-                R.id.nav_File_Bruteforce -> Toast.makeText(applicationContext, "Clicked File Bruteforce", Toast.LENGTH_SHORT).show()
+                R.id.nav_File_Bruteforce -> startActivity(fileIntent)
                 R.id.nav_IP_Sweeper -> startActivity(SweepIntent)
                 R.id.nav_new2 -> Toast.makeText(applicationContext, "Clicked new2", Toast.LENGTH_SHORT).show()
                 R.id.nav_new3 -> Toast.makeText(applicationContext, "Clicked new3", Toast.LENGTH_SHORT).show()
