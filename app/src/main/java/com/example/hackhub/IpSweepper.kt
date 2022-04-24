@@ -1,5 +1,6 @@
 package com.example.hackhub
 
+import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.net.wifi.WifiManager
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,10 @@ import java.util.*
 import kotlin.concurrent.thread
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
+import android.net.wifi.WifiInfo
+
+
+
 
 
 class IpSweepper : AppCompatActivity() {
@@ -66,9 +71,8 @@ class IpSweepper : AppCompatActivity() {
             val addr = InetAddress.getByName(ip)
             val rechbl = addr.isReachable(timeout)
             if (rechbl) {
-                val info = addr.hostName
                 val tv = TextView(this)
-                tv.setText("$ip ($info)")
+                tv.setText("Found:$ip")
                 rec.addView(tv)
                 println("Found:$ip")
            }
